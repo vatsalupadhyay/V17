@@ -1,0 +1,55 @@
+<div class="login-container">
+  <main class="login-card" role="main">
+    <header class="login-header">
+      <h1 id="app-title">V17</h1>
+      <h2>Clean Energy Dashboard</h2>
+      <p class="subtitle">Renewables vs. Coal Analytics</p>
+    </header>
+
+    <form (ngSubmit)="onLogin()" class="login-form" aria-labelledby="app-title" novalidate>
+      <div class="form-group">
+        <label for="username">Login</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          placeholder="Enter username"
+          [disabled]="isLoading"
+          aria-label="Username input field"
+          aria-required="true"
+          autocomplete="username"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter password"
+          [disabled]="isLoading"
+          aria-label="Password input field"
+          aria-required="true"
+          autocomplete="current-password"
+          required
+        >
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message" role="alert" aria-live="assertive">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" [disabled]="isLoading" class="login-button" aria-label="Submit login credentials">
+        {{ isLoading ? 'Logging in...' : 'Login' }}
+      </button>
+    </form>
+
+    <footer class="login-footer">
+      <p><small>Student: Vatsal Kalpesh Upadhyay (801478817)</small></p>
+    </footer>
+  </main>
+</div>

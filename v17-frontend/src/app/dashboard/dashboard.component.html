@@ -1,0 +1,45 @@
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand" role="banner">V17 - Clean Energy Dashboard</div>
+    <div class="nav-links" role="menubar">
+      <a routerLink="/dashboard" routerLinkActive="active" role="menuitem" aria-label="Navigate to Dashboard">Dashboard</a>
+      <a routerLink="/summary" routerLinkActive="active" role="menuitem" aria-label="Navigate to Summary page">Summary</a>
+      <a routerLink="/reports" routerLinkActive="active" role="menuitem" aria-label="Navigate to Reports page">Reports</a>
+      <a (click)="logout()" class="logout-link" role="menuitem" aria-label="Logout from application" tabindex="0" (keydown.enter)="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <main class="content" role="main">
+    <h1 id="page-title">Clean Energy Dashboard</h1>
+    <p class="student-info" role="contentinfo">Student: Vatsal Kalpesh Upadhyay | ID: 801478817</p>
+
+    <article class="section" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Executive Summary</h2>
+      <p class="summary-text">
+        In the first half of 2025, the global energy sector reached a historic tipping point: for the first time ever, renewable energy sources generated more electricity than coal. According to the "Global Electricity Mid-Year Insights 2025" report by Ember, renewables now account for 34.3% of the global electricity mix, surpassing coal's 33.1% share.
+      </p>
+      <p class="summary-text">
+        This shift was driven by a spectacular surge in solar and wind power. Solar generation alone grew by 31%, contributing 306 TWh of new electricity—enough to meet 83% of the entire world's demand growth for the period. Wind power also saw steady growth, rising by 7.7%.
+      </p>
+      <p class="summary-text">
+        While global electricity demand continued to rise by 2.6%, the rapid deployment of clean energy technologies meant that fossil fuel generation actually fell slightly (-0.3%). This data suggests that the power sector may have finally peaked in terms of carbon emissions. However, regional disparities remain, with drought conditions negatively impacting hydropower output in some areas. The milestone of renewables overtaking coal signals that the transition to a clean economy is not only possible but is accelerating faster than predicted.
+      </p>
+    </article>
+
+    <article class="section" aria-labelledby="technical-heading">
+      <h2 id="technical-heading">Technical Description</h2>
+      <p class="technical-text">
+        This Single Page Application (SPA) is built using the MEAN stack architecture, decoupled into a frontend and backend. The frontend is developed with Angular to ensure a responsive user interface, while the backend is powered by NodeJS running on port 3000. Data persistence is managed by a MySQL database. Authentication is secured using JWT (JSON Web Tokens), ensuring that the Dashboard, Summary, and Reports pages are protected. The application is hosted on a single server instance using NGINX as a reverse proxy to serve the frontend on port 80 while communicating with the backend API.
+      </p>
+    </article>
+
+    <aside class="section citation" aria-labelledby="source-heading">
+      <h3 id="source-heading">Source</h3>
+      <p>
+        <a href="https://ember-energy.org/latest-insights/global-electricity-mid-year-insights-2025/" target="_blank" rel="noopener noreferrer" aria-label="Read full report on Ember Energy website (opens in new tab)">
+          Global Electricity Mid-Year Insights 2025 - Ember Energy
+        </a>
+      </p>
+    </aside>
+  </main>
+</div>

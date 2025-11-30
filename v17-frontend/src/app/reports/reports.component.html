@@ -1,0 +1,61 @@
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand" role="banner">V17 - Clean Energy Dashboard</div>
+    <div class="nav-links" role="menubar">
+      <a routerLink="/dashboard" routerLinkActive="active" role="menuitem" aria-label="Navigate to Dashboard">Dashboard</a>
+      <a routerLink="/summary" routerLinkActive="active" role="menuitem" aria-label="Navigate to Summary page">Summary</a>
+      <a routerLink="/reports" routerLinkActive="active" role="menuitem" aria-label="Navigate to Reports page" aria-current="page">Reports</a>
+      <a (click)="logout()" class="logout-link" role="menuitem" aria-label="Logout from application" tabindex="0" (keydown.enter)="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <main class="content" role="main">
+    <h1 id="page-title">Reports - Global Electricity Mix</h1>
+    <p class="student-info" role="contentinfo">Student: Vatsal Kalpesh Upadhyay | ID: 801478817</p>
+
+    <article class="chart-section" *ngIf="chartData" aria-labelledby="chart-title">
+      <div class="chart-container" role="img" aria-label="Doughnut chart showing global electricity generation share in first half of 2025: Renewables 34.3%, Coal 33.1%, Gas 23%, Nuclear 9.1%, Other Fossil 0.5%">
+        <canvas #mixChart aria-label="Electricity mix doughnut chart"></canvas>
+      </div>
+
+      <figcaption class="chart-caption">
+        <p id="chart-title"><strong>Historic Milestone:</strong> {{ chartData.caption }}</p>
+      </figcaption>
+    </article>
+
+    <div class="error-section" *ngIf="errorMessage" role="alert" aria-live="polite">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+
+    <section class="breakdown-section" *ngIf="chartData" aria-labelledby="breakdown-heading">
+      <h2 id="breakdown-heading">Energy Mix Breakdown (H1 2025)</h2>
+      <div class="breakdown-grid" role="list">
+        <div class="breakdown-item renewable" role="listitem" aria-label="Renewables: 34.3%, Leading Source">
+          <div class="percentage" aria-hidden="true">34.3%</div>
+          <div class="label" aria-hidden="true">Renewables</div>
+          <div class="status" aria-hidden="true">Leading Source</div>
+        </div>
+        <div class="breakdown-item coal" role="listitem" aria-label="Coal: 33.1%, Second Place">
+          <div class="percentage" aria-hidden="true">33.1%</div>
+          <div class="label" aria-hidden="true">Coal</div>
+          <div class="status" aria-hidden="true">Second Place</div>
+        </div>
+        <div class="breakdown-item gas" role="listitem" aria-label="Gas: 23.0%, Third Place">
+          <div class="percentage" aria-hidden="true">23.0%</div>
+          <div class="label" aria-hidden="true">Gas</div>
+          <div class="status" aria-hidden="true">Third Place</div>
+        </div>
+        <div class="breakdown-item nuclear" role="listitem" aria-label="Nuclear: 9.1%, Stable">
+          <div class="percentage" aria-hidden="true">9.1%</div>
+          <div class="label" aria-hidden="true">Nuclear</div>
+          <div class="status" aria-hidden="true">Stable</div>
+        </div>
+        <div class="breakdown-item other" role="listitem" aria-label="Other Fossil: 0.5%, Minimal">
+          <div class="percentage" aria-hidden="true">0.5%</div>
+          <div class="label" aria-hidden="true">Other Fossil</div>
+          <div class="status" aria-hidden="true">Minimal</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

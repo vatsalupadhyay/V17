@@ -1,0 +1,11 @@
+node_modules/
+.env
+*.log
+.DS_Store
+dist/
+.angular/
+
+*.md
+!v17-backend/README.md
+!v17-frontend/README.md
+nginx.conf

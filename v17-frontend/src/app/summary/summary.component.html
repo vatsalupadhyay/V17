@@ -1,0 +1,40 @@
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand" role="banner">V17 - Clean Energy Dashboard</div>
+    <div class="nav-links" role="menubar">
+      <a routerLink="/dashboard" routerLinkActive="active" role="menuitem" aria-label="Navigate to Dashboard">Dashboard</a>
+      <a routerLink="/summary" routerLinkActive="active" role="menuitem" aria-label="Navigate to Summary page" aria-current="page">Summary</a>
+      <a routerLink="/reports" routerLinkActive="active" role="menuitem" aria-label="Navigate to Reports page">Reports</a>
+      <a (click)="logout()" class="logout-link" role="menuitem" aria-label="Logout from application" tabindex="0" (keydown.enter)="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <main class="content" role="main">
+    <h1 id="page-title">Summary - Growth Analysis</h1>
+    <p class="student-info" role="contentinfo">Student: Vatsal Kalpesh Upadhyay | ID: 801478817</p>
+
+    <article class="chart-section" *ngIf="chartData" aria-labelledby="chart-title">
+      <div class="chart-container" role="img" aria-label="Bar chart showing global electricity growth in first half of 2025: Solar growth 306 TWh, Wind growth 97 TWh, Total demand growth 369 TWh">
+        <canvas #growthChart aria-label="Growth analysis bar chart"></canvas>
+      </div>
+
+      <figcaption class="chart-caption">
+        <p id="chart-title"><strong>Analysis:</strong> {{ chartData.caption }}</p>
+      </figcaption>
+    </article>
+
+    <div class="error-section" *ngIf="errorMessage" role="alert" aria-live="polite">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+
+    <section class="insights-section" *ngIf="chartData" aria-labelledby="insights-heading">
+      <h2 id="insights-heading">Key Insights</h2>
+      <ul role="list">
+        <li>Solar power contributed <strong>306 TWh</strong> of new electricity generation</li>
+        <li>Wind power added <strong>97 TWh</strong> to the global grid</li>
+        <li>Combined renewable growth of <strong>403 TWh</strong> exceeded total demand growth of <strong>369 TWh</strong></li>
+        <li>This surplus allowed for a reduction in fossil fuel generation</li>
+      </ul>
+    </section>
+  </main>
+</div>

@@ -62,25 +62,6 @@ ng build --configuration production
 
 See `DEPLOYMENT.md` for detailed instructions.
 
-## 📖 Data Source
-
-All content based on:  
-**"Global Electricity Mid-Year Insights 2025"** by Ember Energy  
-https://ember-energy.org/latest-insights/global-electricity-mid-year-insights-2025/
-
-## ✅ Project Status
-
-**Status**: ✅ COMPLETE - All requirements implemented
-
-- ✅ Angular frontend with routing
-- ✅ Node.js backend with Express
-- ✅ MySQL database
-- ✅ JWT authentication
-- ✅ Interactive charts (Chart.js)
-- ✅ Protected routes
-- ✅ Responsive design
-- ✅ Production-ready
-
 ## 📝 Default Credentials
 
 - Username: `Vatsal`
@@ -98,14 +79,5 @@ cd v17-frontend
 ng serve --open  # Opens browser automatically
 ```
 
-## 📞 Support
-
-For issues or questions, refer to:
-1. `TESTING.md` - Testing and troubleshooting
-2. `DEPLOYMENT.md` - Deployment issues
-3. Check console logs for errors
-
----
-
-**Built with ❤️ by Vatsal Kalpesh Upadhyay (801478817)**
+**Built by Vatsal Kalpesh Upadhyay (801478817)**
 

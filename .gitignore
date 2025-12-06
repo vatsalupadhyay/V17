@@ -6,6 +6,7 @@ dist/
 .angular/
 
 *.md
+!README.md
 !v17-backend/README.md
 !v17-frontend/README.md
 nginx.conf

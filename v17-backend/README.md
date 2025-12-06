@@ -1,53 +1,24 @@
-# V17 Backend - Clean Energy Dashboard API
+# V17 Backend
 
-**Student**: Vatsal Kalpesh Upadhyay  
-**Student ID**: 801478817
+Node.js API server for V17 Clean Energy Dashboard.
 
-## Installation
+## Setup
 
 ```bash
 npm install
-```
-
-## Database Setup
-
-1. Make sure MySQL is running
-2. Update `.env` file with your MySQL credentials
-3. Run the schema:
-```bash
+cp .env.example .env
+# Edit .env with your MySQL credentials
 mysql -u root -p < database/schema.sql
-```
-
-## Running the Server
-
-```bash
 npm start
 ```
 
-Or for development with auto-reload:
-```bash
-npm run dev
-```
-
-Server will run on `http://localhost:3000`
+Server runs on port 3000.
 
 ## API Endpoints
 
-### POST /api/login
-Authenticate user and receive JWT token.
-
-**Request:**
-```json
-{
-  "username": "Vatsal",
-  "password": "Vatsal"
-}
-```
-
-**Response:**
-```json
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+- `POST /api/login` - Authenticate user
+- `GET /api/chart-data` - Get chart data (JWT required)
+- `GET /api/health` - Health check
   "message": "Login successful",
   "username": "Vatsal"
 }
